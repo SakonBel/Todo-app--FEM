@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #161722;
+  font-family: "Josefin Sans", sans-serif;
+  color: #cacde8;
+}
+
+header {
+  background-image: url("../../images/bg-mobile-dark.jpg");
+  background-size: cover;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 20px 1fr 20px 1fr 20px;
+      grid-template-columns: 20px 1fr 20px 1fr 20px;
+  -ms-grid-rows: 40px 1fr 20px 1fr 40px;
+      grid-template-rows: 40px 1fr 20px 1fr 40px;
+}
+
+.container {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 3;
+  grid-column: 2 / 5;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2 / 3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+h1 {
+  color: white;
+  text-transform: uppercase;
+}
+
+.change-theme {
+  background: transparent;
+  border: none;
+  -webkit-transform: scale(0.75);
+          transform: scale(0.75);
+}
+
+.create-task {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 3;
+  grid-column: 2 / 5;
+  -ms-grid-row: 4;
+  -ms-grid-row-span: 1;
+  grid-row: 4 / 5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #25273c;
+  height: 48px;
+  border-radius: 5px;
+}
+
+.create-task input {
+  margin: 20px;
+  cursor: pointer;
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
+
+@import "variables";
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: $very-dark-blue;
+  font-family: $main-font;
+  color: $light-grayish-blue;
+}
+
+header {
+  background-image: url("../../images/bg-mobile-dark.jpg");
+  background-size: cover;
+  display: grid;
+  grid-template-columns: 20px 1fr 20px 1fr 20px;
+  grid-template-rows: 40px 1fr 20px 1fr 40px;
+}
+
+.container {
+  grid-column: 2 / 5;
+  grid-row: 2 / 3;
+  display: flex;
+  justify-content: space-between;
+}
+
+h1 {
+  color: white;
+  text-transform: uppercase;
+}
+
+.change-theme {
+  background: transparent;
+  border: none;
+  transform: scale(0.75);
+}
+
+.create-task {
+  grid-column: 2 / 5;
+  grid-row: 4 / 5;
+  display: flex;
+  align-items: center;
+  background-color: $very-dark-desaturate-blue;
+  height: 48px;
+  border-radius: 5px;
+}
+
+.create-task input {
+  margin: 20px;
+  //   opacity: 0;
+  cursor: pointer;
+}
