@@ -76,22 +76,54 @@ main {
   border-radius: 5px;
   background-color: $very-dark-desaturate-blue;
 
+  .todo-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 13px;
+    color: $light-grayish-blue;
+    padding: 17px 20px;
+    padding-left: 0;
+    border-bottom: 1px solid $very-dark-grayish-blue;
+
+    .item {
+      display: flex;
+      align-items: center;
+    }
+
+    .cross {
+      fill: #494c6b;
+      transform: scale(0.75);
+      cursor: pointer;
+
+      &:hover {
+        fill: $light-grayish-blue;
+      }
+    }
+  }
+
   .list-status {
     color: $very-dark-grayish-blue;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 17px 20px;
 
     button {
       border: none;
       background: transparent;
       color: $very-dark-grayish-blue;
+      cursor: pointer;
+
+      &:hover,
+      &:active {
+        color: $bright-blue;
+      }
     }
   }
 }
 
-nav {
+.filter {
   background-color: $very-dark-desaturate-blue;
   color: $very-dark-grayish-blue;
   font-weight: $bold;
@@ -102,13 +134,23 @@ nav {
   justify-content: center;
   align-items: center;
 
-  ul {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  .filter-list {
+    color: $very-dark-grayish-blue;
+    background: transparent;
+    border: none;
+    padding: 0 8px;
+    cursor: pointer;
 
-    li {
-      padding: 0 8px;
+    &:hover,
+    &:active {
+      color: $bright-blue;
     }
   }
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $very-dark-grayish-blue;
 }

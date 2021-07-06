@@ -84,6 +84,43 @@ main {
   background-color: #25273c;
 }
 
+.lists .todo-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 13px;
+  color: #cacde8;
+  padding: 17px 20px;
+  padding-left: 0;
+  border-bottom: 1px solid #4d5066;
+}
+
+.lists .todo-item .item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.lists .todo-item .cross {
+  fill: #494c6b;
+  -webkit-transform: scale(0.75);
+          transform: scale(0.75);
+  cursor: pointer;
+}
+
+.lists .todo-item .cross:hover {
+  fill: #cacde8;
+}
+
 .lists .list-status {
   color: #4d5066;
   display: -webkit-box;
@@ -95,16 +132,21 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 20px;
+  padding: 17px 20px;
 }
 
 .lists .list-status button {
   border: none;
   background: transparent;
   color: #4d5066;
+  cursor: pointer;
 }
 
-nav {
+.lists .list-status button:hover, .lists .list-status button:active {
+  color: #3a7bfd;
+}
+
+.filter {
   background-color: #25273c;
   color: #4d5066;
   font-weight: 700;
@@ -122,7 +164,19 @@ nav {
           align-items: center;
 }
 
-nav ul {
+.filter .filter-list {
+  color: #4d5066;
+  background: transparent;
+  border: none;
+  padding: 0 8px;
+  cursor: pointer;
+}
+
+.filter .filter-list:hover, .filter .filter-list:active {
+  color: #3a7bfd;
+}
+
+footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -132,9 +186,6 @@ nav ul {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-nav ul li {
-  padding: 0 8px;
+  color: #4d5066;
 }
 /*# sourceMappingURL=style.css.map */
