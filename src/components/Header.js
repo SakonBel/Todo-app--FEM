@@ -14,8 +14,8 @@ const Header = () => {
         </button>
       </div>
       <div className="create-task">
-        <input type="checkbox" name="add-task" id="add-task" />
-        <label for="add-task">Create a now todo...</label>
+        <div className="circle"></div>
+        <p>Create a new todo...</p>
       </div>
     </header>
   );

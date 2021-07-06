@@ -6,32 +6,37 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  list-style: none;
 }
 
 body {
   background-color: $very-dark-blue;
   font-family: $main-font;
+  font-weight: $medium;
   color: $light-grayish-blue;
+}
+
+p {
+  font-size: 13px;
 }
 
 header {
   background-image: url("../../images/bg-mobile-dark.jpg");
   background-size: cover;
-  display: grid;
-  grid-template-columns: 20px 1fr 20px 1fr 20px;
-  grid-template-rows: 40px 1fr 20px 1fr 40px;
+  padding: 40px 25px;
 }
 
 .container {
-  grid-column: 2 / 5;
-  grid-row: 2 / 3;
   display: flex;
   justify-content: space-between;
+  padding-bottom: 40px;
 }
 
 h1 {
   color: white;
+  font-size: 1.7rem;
   text-transform: uppercase;
+  letter-spacing: 10px;
 }
 
 .change-theme {
@@ -41,17 +46,69 @@ h1 {
 }
 
 .create-task {
-  grid-column: 2 / 5;
-  grid-row: 4 / 5;
   display: flex;
   align-items: center;
   background-color: $very-dark-desaturate-blue;
   height: 48px;
   border-radius: 5px;
+
+  p {
+    color: $very-dark-grayish-blue;
+  }
 }
 
-.create-task input {
-  margin: 20px;
-  //   opacity: 0;
-  cursor: pointer;
+.circle {
+  width: 20px;
+  height: 20px;
+  border: 1px solid $very-dark-grayish-blue;
+  border-radius: 25px;
+  margin-left: 20px;
+  margin-right: 10px;
+}
+
+main {
+  position: relative;
+  bottom: 25px;
+  margin: 0 25px;
+}
+
+.lists {
+  border-radius: 5px;
+  background-color: $very-dark-desaturate-blue;
+
+  .list-status {
+    color: $very-dark-grayish-blue;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+
+    button {
+      border: none;
+      background: transparent;
+      color: $very-dark-grayish-blue;
+    }
+  }
+}
+
+nav {
+  background-color: $very-dark-desaturate-blue;
+  color: $very-dark-grayish-blue;
+  font-weight: $bold;
+  margin-top: 20px;
+  height: 50px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    li {
+      padding: 0 8px;
+    }
+  }
 }
