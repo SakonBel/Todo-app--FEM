@@ -4,8 +4,6 @@ import Footer from "./components/Footer";
 import { useState } from "react";
 
 function App() {
-  const [todos, setTodos] = useState(null);
-
   const lists = [
     {
       id: 1,
@@ -39,6 +37,13 @@ function App() {
     },
   ];
 
+  const [todos, setTodos] = useState(lists);
+  // const [active, setActive] = useState(null);
+
+  // const statusChange = (id) => {
+  //   todo.active = !todo.active;
+  // };
+
   const filterAll = (todos) => {
     setTodos(todos);
   };
@@ -46,16 +51,22 @@ function App() {
   const filterActive = (todos) => {
     const tasks = todos.filter((todo) => todo.active === true);
     setTodos(tasks);
-    console.log(tasks);
+  };
+
+  const filterComplete = (todos) => {
+    const tasks = todos.filter((todo) => todo.active === false);
+    setTodos(tasks);
   };
 
   return (
     <div className="App">
       <Header />
       <AllTodos
-        todos={lists}
+        lists={lists}
+        todos={todos}
         filterAll={filterAll}
         filterActive={filterActive}
+        filterComplete={filterComplete}
       />
       <Footer />
     </div>

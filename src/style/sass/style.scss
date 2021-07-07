@@ -96,8 +96,9 @@ main {
       transform: scale(0.75);
       cursor: pointer;
 
-      &:hover {
-        fill: $light-grayish-blue;
+      &:hover,
+      &:active {
+        fill: $bright-blue;
       }
     }
   }
@@ -153,4 +154,18 @@ footer {
   justify-content: center;
   align-items: center;
   color: $very-dark-grayish-blue;
+}
+
+.complete {
+  .item {
+    color: $very-dark-grayish-blue;
+    text-decoration: line-through;
+
+    .circle {
+      background-image: $check-background;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
 }

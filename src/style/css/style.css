@@ -117,8 +117,8 @@ main {
   cursor: pointer;
 }
 
-.lists .todo-item .cross:hover {
-  fill: #cacde8;
+.lists .todo-item .cross:hover, .lists .todo-item .cross:active {
+  fill: #3a7bfd;
 }
 
 .lists .list-status {
@@ -187,5 +187,24 @@ footer {
       -ms-flex-align: center;
           align-items: center;
   color: #4d5066;
+}
+
+.complete .item {
+  color: #4d5066;
+  text-decoration: line-through;
+}
+
+.complete .item .circle {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#57ddff), to(#c058f3));
+  background-image: linear-gradient(#57ddff, #c058f3);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 /*# sourceMappingURL=style.css.map */
