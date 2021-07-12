@@ -52,8 +52,14 @@ h1 {
   height: 48px;
   border-radius: 5px;
 
-  p {
-    color: $very-dark-grayish-blue;
+  input {
+    color: $light-grayish-blue;
+    background-color: transparent;
+    border: none;
+
+    &:focus {
+      height: 30px;
+    }
   }
 }
 
@@ -89,6 +95,10 @@ main {
     .item {
       display: flex;
       align-items: center;
+
+      .circle {
+        cursor: pointer;
+      }
     }
 
     .cross {

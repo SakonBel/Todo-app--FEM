@@ -4,7 +4,7 @@ import Footer from "./components/Footer";
 import { useState } from "react";
 
 function App() {
-  const lists = [
+  let lists = [
     {
       id: 1,
       task: "Complete online JavaScript course",
@@ -37,12 +37,37 @@ function App() {
     },
   ];
 
-  const [todos, setTodos] = useState(lists);
-  // const [active, setActive] = useState(null);
+  const [allLists, setAllLists] = useState(lists);
+  const [todos, setTodos] = useState(allLists);
 
-  // const statusChange = (id) => {
-  //   todo.active = !todo.active;
-  // };
+  const toggleActive = (id) => {
+    const newLists = allLists.map((list) => {
+      if (list.id === id) {
+        list.active = !list.active;
+      }
+      return list;
+    });
+    setTodos(newLists);
+    setAllLists(newLists);
+  };
+
+  const addTodo = (text) => {
+    const newList = {
+      id: Math.floor(Math.random() * 10000000),
+      task: text,
+      active: true,
+    };
+
+    allLists.push(newList);
+    setTodos(allLists);
+    setAllLists(allLists);
+  };
+
+  const deleteTodo = (id) => {
+    const newTodos = todos.filter((todo) => todo.id !== id);
+    setTodos(newTodos);
+    setAllLists(newTodos);
+  };
 
   const filterAll = (todos) => {
     setTodos(todos);
@@ -60,10 +85,12 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
+      <Header addTodo={addTodo} />
       <AllTodos
-        lists={lists}
+        allLists={allLists}
         todos={todos}
+        toggleActive={toggleActive}
+        deleteTodo={deleteTodo}
         filterAll={filterAll}
         filterActive={filterActive}
         filterComplete={filterComplete}

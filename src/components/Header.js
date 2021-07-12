@@ -1,4 +1,4 @@
-const Header = () => {
+const Header = ({ addTodo }) => {
   return (
     <header>
       <div className="container">
@@ -14,8 +14,16 @@ const Header = () => {
         </button>
       </div>
       <div className="create-task">
+        {/* <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            console.log(e.target);
+            addTodo(e.value);
+          }}
+        > */}
         <div className="circle"></div>
-        <p>Create a new todo...</p>
+        <input type="text" placeholder="Create a new todo..." name="new-task" />
+        {/* </form> */}
       </div>
     </header>
   );

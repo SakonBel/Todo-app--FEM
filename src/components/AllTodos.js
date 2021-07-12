@@ -1,8 +1,10 @@
 import Filter from "./Filter";
 
 const AllTodos = ({
-  lists,
+  allLists,
   todos,
+  toggleActive,
+  deleteTodo,
   filterActive,
   filterAll,
   filterComplete,
@@ -16,10 +18,13 @@ const AllTodos = ({
               return (
                 <li className="todo-item" key={todo.id}>
                   <div className="item">
-                    <div className="circle"></div>
+                    <div
+                      className="circle"
+                      onClick={() => toggleActive(todo.id)}
+                    ></div>
                     {todo.task}
                   </div>
-                  <div className="cross">
+                  <div className="cross" onClick={() => deleteTodo(todo.id)}>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="18"
@@ -37,7 +42,10 @@ const AllTodos = ({
               return (
                 <li className="todo-item complete" key={todo.id}>
                   <div className="item">
-                    <div className="circle">
+                    <div
+                      className="circle"
+                      onClick={() => toggleActive(todo.id)}
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="11"
@@ -46,14 +54,14 @@ const AllTodos = ({
                         <path
                           fill="none"
                           stroke="#FFF"
-                          stroke-width="2"
+                          strokeWidth="2"
                           d="M1 4.304L3.696 7l6-6"
                         />
                       </svg>
                     </div>
                     {todo.task}
                   </div>
-                  <div className="cross">
+                  <div className="cross" onClick={() => deleteTodo(todo.id)}>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="18"
@@ -76,7 +84,7 @@ const AllTodos = ({
         </div>
       </div>
       <Filter
-        lists={lists}
+        allLists={allLists}
         filterActive={filterActive}
         filterAll={filterAll}
         filterComplete={filterComplete}

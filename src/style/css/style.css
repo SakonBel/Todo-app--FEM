@@ -60,8 +60,14 @@ h1 {
   border-radius: 5px;
 }
 
-.create-task p {
-  color: #4d5066;
+.create-task input {
+  color: #cacde8;
+  background-color: transparent;
+  border: none;
+}
+
+.create-task input:focus {
+  height: 30px;
 }
 
 .circle {
@@ -108,6 +114,10 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.lists .todo-item .item .circle {
+  cursor: pointer;
 }
 
 .lists .todo-item .cross {
