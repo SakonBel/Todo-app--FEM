@@ -9,11 +9,15 @@
   list-style: none;
 }
 
+.light {
+  background-color: $very-light-grayish-blue;
+}
+
 body {
   background-color: $very-dark-blue;
+  color: $light-grayish-blue;
   font-family: $main-font;
   font-weight: $medium;
-  color: $light-grayish-blue;
 }
 
 p {
@@ -21,9 +25,16 @@ p {
 }
 
 header {
-  background-image: url("../../images/bg-mobile-dark.jpg");
   background-size: cover;
   padding: 40px 25px;
+}
+
+header[class~="dark"] {
+  background-image: url("../../images/bg-mobile-dark.jpg");
+}
+
+header[class~="light"] {
+  background-image: url("../../images/bg-mobile-light.jpg");
 }
 
 .container {
@@ -43,12 +54,12 @@ h1 {
   background: transparent;
   border: none;
   transform: scale(0.75);
+  cursor: pointer;
 }
 
 .create-task {
   display: flex;
   align-items: center;
-  background-color: $very-dark-desaturate-blue;
   height: 48px;
   border-radius: 5px;
 
@@ -56,21 +67,44 @@ h1 {
     display: flex;
 
     input {
-      color: $light-grayish-blue;
       background-color: transparent;
       border: none;
 
       &:focus {
-        height: 30px;
+        height: 20px;
       }
     }
+  }
+}
+
+.create-task[class~="dark"] {
+  background-color: $very-dark-desaturate-blue;
+
+  .circle {
+    border-color: $very-dark-grayish-blue;
+  }
+
+  input {
+    color: $light-grayish-blue;
+  }
+}
+
+.create-task[class~="light"] {
+  background-color: $very-light-gray;
+
+  .circle {
+    border-color: $light-grayish-blue;
+  }
+
+  input {
+    color: $dark-grayish-blue;
   }
 }
 
 .circle {
   width: 20px;
   height: 20px;
-  border: 1px solid $very-dark-grayish-blue;
+  border: 1px solid;
   border-radius: 25px;
   margin-left: 20px;
   margin-right: 10px;
@@ -91,10 +125,9 @@ main {
     align-items: center;
     justify-content: space-between;
     font-size: 13px;
-    color: $light-grayish-blue;
     padding: 17px 20px;
     padding-left: 0;
-    border-bottom: 1px solid $very-dark-grayish-blue;
+    border-bottom: 1px solid;
 
     .item {
       display: flex;
@@ -106,7 +139,6 @@ main {
     }
 
     .cross {
-      fill: #494c6b;
       transform: scale(0.75);
       cursor: pointer;
 
@@ -118,7 +150,6 @@ main {
   }
 
   .list-status {
-    color: $very-dark-grayish-blue;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -127,7 +158,6 @@ main {
     button {
       border: none;
       background: transparent;
-      color: $very-dark-grayish-blue;
       cursor: pointer;
 
       &:hover,
@@ -138,9 +168,61 @@ main {
   }
 }
 
-.filter {
+.lists[class~="dark"] {
   background-color: $very-dark-desaturate-blue;
-  color: $very-dark-grayish-blue;
+
+  .todo-item {
+    color: $light-grayish-blue;
+    border-color: $very-dark-grayish-blue;
+
+    .cross {
+      fill: #494c6b;
+    }
+  }
+
+  .complete .item {
+    color: $very-dark-grayish-blue;
+  }
+
+  .list-status {
+    color: $very-dark-grayish-blue;
+
+    button {
+      color: $very-dark-grayish-blue;
+    }
+  }
+}
+
+.lists[class~="light"] {
+  background-color: $very-light-gray;
+
+  .circle {
+    border-color: $dark-grayish-blue;
+  }
+
+  .todo-item {
+    color: $very-dark-grayish-blue;
+    border-color: $light-grayish-blue;
+
+    .cross {
+      fill: #494c6b;
+    }
+  }
+
+  .complete .item {
+    color: $light-grayish-blue;
+  }
+
+  .list-status {
+    color: $very-dark-grayish-blue;
+
+    button {
+      color: $very-dark-grayish-blue;
+    }
+  }
+}
+
+.filter {
   font-weight: $bold;
   margin-top: 20px;
   height: 50px;
@@ -150,7 +232,6 @@ main {
   align-items: center;
 
   .filter-list {
-    color: $very-dark-grayish-blue;
     background: transparent;
     border: none;
     padding: 0 8px;
@@ -163,6 +244,34 @@ main {
   }
 }
 
+.filter[class~="dark"] {
+  background-color: $very-dark-desaturate-blue;
+
+  .filter-list {
+    color: $very-dark-grayish-blue;
+  }
+
+  .all,
+  .active,
+  .complete {
+    color: $bright-blue;
+  }
+}
+
+.filter[class~="light"] {
+  background-color: $very-light-gray;
+
+  .filter-list {
+    color: $very-dark-grayish-blue;
+  }
+
+  .all,
+  .active,
+  .complete {
+    color: $bright-blue;
+  }
+}
+
 footer {
   display: flex;
   justify-content: center;
@@ -172,7 +281,6 @@ footer {
 
 .complete {
   .item {
-    color: $very-dark-grayish-blue;
     text-decoration: line-through;
 
     .circle {

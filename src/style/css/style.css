@@ -7,11 +7,15 @@
   list-style: none;
 }
 
+.light {
+  background-color: #e4e5f1;
+}
+
 body {
   background-color: #161722;
+  color: #cacde8;
   font-family: "Josefin Sans", sans-serif;
   font-weight: 400;
-  color: #cacde8;
 }
 
 p {
@@ -19,9 +23,16 @@ p {
 }
 
 header {
-  background-image: url("../../images/bg-mobile-dark.jpg");
   background-size: cover;
   padding: 40px 25px;
+}
+
+header[class~="dark"] {
+  background-image: url("../../images/bg-mobile-dark.jpg");
+}
+
+header[class~="light"] {
+  background-image: url("../../images/bg-mobile-light.jpg");
 }
 
 .container {
@@ -46,6 +57,7 @@ h1 {
   border: none;
   -webkit-transform: scale(0.75);
           transform: scale(0.75);
+  cursor: pointer;
 }
 
 .create-task {
@@ -55,7 +67,6 @@ h1 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #25273c;
   height: 48px;
   border-radius: 5px;
 }
@@ -67,19 +78,42 @@ h1 {
 }
 
 .create-task form input {
-  color: #cacde8;
   background-color: transparent;
   border: none;
 }
 
 .create-task form input:focus {
-  height: 30px;
+  height: 20px;
+}
+
+.create-task[class~="dark"] {
+  background-color: #25273c;
+}
+
+.create-task[class~="dark"] .circle {
+  border-color: #4d5066;
+}
+
+.create-task[class~="dark"] input {
+  color: #cacde8;
+}
+
+.create-task[class~="light"] {
+  background-color: #fafafa;
+}
+
+.create-task[class~="light"] .circle {
+  border-color: #cacde8;
+}
+
+.create-task[class~="light"] input {
+  color: #777a92;
 }
 
 .circle {
   width: 20px;
   height: 20px;
-  border: 1px solid #4d5066;
+  border: 1px solid;
   border-radius: 25px;
   margin-left: 20px;
   margin-right: 10px;
@@ -107,10 +141,9 @@ main {
       -ms-flex-pack: justify;
           justify-content: space-between;
   font-size: 13px;
-  color: #cacde8;
   padding: 17px 20px;
   padding-left: 0;
-  border-bottom: 1px solid #4d5066;
+  border-bottom: 1px solid;
 }
 
 .lists .todo-item .item {
@@ -127,7 +160,6 @@ main {
 }
 
 .lists .todo-item .cross {
-  fill: #494c6b;
   -webkit-transform: scale(0.75);
           transform: scale(0.75);
   cursor: pointer;
@@ -138,7 +170,6 @@ main {
 }
 
 .lists .list-status {
-  color: #4d5066;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -154,7 +185,6 @@ main {
 .lists .list-status button {
   border: none;
   background: transparent;
-  color: #4d5066;
   cursor: pointer;
 }
 
@@ -162,9 +192,61 @@ main {
   color: #3a7bfd;
 }
 
-.filter {
+.lists[class~="dark"] {
   background-color: #25273c;
+}
+
+.lists[class~="dark"] .todo-item {
+  color: #cacde8;
+  border-color: #4d5066;
+}
+
+.lists[class~="dark"] .todo-item .cross {
+  fill: #494c6b;
+}
+
+.lists[class~="dark"] .complete .item {
   color: #4d5066;
+}
+
+.lists[class~="dark"] .list-status {
+  color: #4d5066;
+}
+
+.lists[class~="dark"] .list-status button {
+  color: #4d5066;
+}
+
+.lists[class~="light"] {
+  background-color: #fafafa;
+}
+
+.lists[class~="light"] .circle {
+  border-color: #777a92;
+}
+
+.lists[class~="light"] .todo-item {
+  color: #4d5066;
+  border-color: #cacde8;
+}
+
+.lists[class~="light"] .todo-item .cross {
+  fill: #494c6b;
+}
+
+.lists[class~="light"] .complete .item {
+  color: #cacde8;
+}
+
+.lists[class~="light"] .list-status {
+  color: #4d5066;
+}
+
+.lists[class~="light"] .list-status button {
+  color: #4d5066;
+}
+
+.filter {
   font-weight: 700;
   margin-top: 20px;
   height: 50px;
@@ -181,7 +263,6 @@ main {
 }
 
 .filter .filter-list {
-  color: #4d5066;
   background: transparent;
   border: none;
   padding: 0 8px;
@@ -189,6 +270,34 @@ main {
 }
 
 .filter .filter-list:hover, .filter .filter-list:active {
+  color: #3a7bfd;
+}
+
+.filter[class~="dark"] {
+  background-color: #25273c;
+}
+
+.filter[class~="dark"] .filter-list {
+  color: #4d5066;
+}
+
+.filter[class~="dark"] .all,
+.filter[class~="dark"] .active,
+.filter[class~="dark"] .complete {
+  color: #3a7bfd;
+}
+
+.filter[class~="light"] {
+  background-color: #fafafa;
+}
+
+.filter[class~="light"] .filter-list {
+  color: #4d5066;
+}
+
+.filter[class~="light"] .all,
+.filter[class~="light"] .active,
+.filter[class~="light"] .complete {
   color: #3a7bfd;
 }
 
@@ -206,7 +315,6 @@ footer {
 }
 
 .complete .item {
-  color: #4d5066;
   text-decoration: line-through;
 }
 

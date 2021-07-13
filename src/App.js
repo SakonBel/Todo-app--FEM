@@ -37,8 +37,29 @@ function App() {
     },
   ];
 
+  const body = document.querySelector("body");
+
   const [allLists, setAllLists] = useState(lists);
   const [todos, setTodos] = useState(allLists);
+  const [all, setAll] = useState("all");
+  const [active, setActive] = useState("");
+  const [complete, setComplete] = useState("");
+  const [theme, setTheme] = useState("dark");
+
+  body.className = theme;
+
+  const changeTheme = () => {
+    if (theme === "dark") {
+      setTheme("light");
+    } else {
+      setTheme("dark");
+    }
+  };
+
+  const [count, setCount] = useState(() => {
+    const tempLists = lists.filter((list) => list.active === true);
+    return tempLists.length;
+  });
 
   const toggleActive = (id) => {
     const newLists = allLists.map((list) => {
@@ -49,6 +70,12 @@ function App() {
     });
     setTodos(newLists);
     setAllLists(newLists);
+    countTodo(newLists);
+  };
+
+  const countTodo = (lists) => {
+    const newCount = lists.filter((list) => list.active === true);
+    setCount(newCount.length);
   };
 
   const addTodo = (text) => {
@@ -63,34 +90,51 @@ function App() {
 
     setTodos(newAll);
     setAllLists(newAll);
+    countTodo(newAll);
   };
 
   const deleteTodo = (id) => {
-    const newTodos = todos.filter((todo) => todo.id !== id);
+    const newLists = allLists.filter((list) => list.id !== id);
+    const newTodos = todos.filter((list) => list.id !== id);
     setTodos(newTodos);
-    setAllLists(newTodos);
+    setAllLists(newLists);
+    countTodo(newLists);
   };
 
-  const filterAll = (todos) => {
-    setTodos(todos);
+  const filterAll = (memo) => {
+    setTodos(memo);
+    setAll("all");
+    setActive("");
+    setComplete("");
   };
 
-  const filterActive = (todos) => {
-    const tasks = todos.filter((todo) => todo.active === true);
+  const filterActive = (memo) => {
+    const tasks = memo.filter((todo) => todo.active === true);
     setTodos(tasks);
+    setActive("active");
+    setAll("");
+    setComplete("");
   };
 
-  const filterComplete = (todos) => {
-    const tasks = todos.filter((todo) => todo.active === false);
+  const filterComplete = (memo) => {
+    const tasks = memo.filter((todo) => todo.active === false);
     setTodos(tasks);
+    setComplete("complete");
+    setActive("");
+    setAll("");
   };
 
   return (
     <div className="App">
-      <Header addTodo={addTodo} todos={todos} allLists={allLists} />
+      <Header addTodo={addTodo} theme={theme} changeTheme={changeTheme} />
       <AllTodos
         allLists={allLists}
         todos={todos}
+        count={count}
+        all={all}
+        active={active}
+        complete={complete}
+        theme={theme}
         toggleActive={toggleActive}
         deleteTodo={deleteTodo}
         filterAll={filterAll}

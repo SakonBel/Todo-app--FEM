@@ -1,13 +1,31 @@
-const Filter = ({ allLists, filterActive, filterAll, filterComplete }) => {
+const Filter = ({
+  all,
+  active,
+  complete,
+  theme,
+  allLists,
+  filterActive,
+  filterAll,
+  filterComplete,
+}) => {
   return (
-    <div className="filter">
-      <button className="filter-list" onClick={() => filterAll(allLists)}>
+    <div className={`filter ${theme}`}>
+      <button
+        className={`filter-list ${all}`}
+        onClick={() => filterAll(allLists)}
+      >
         All
       </button>
-      <button className="filter-list" onClick={() => filterActive(allLists)}>
+      <button
+        className={`filter-list ${active}`}
+        onClick={() => filterActive(allLists)}
+      >
         Active
       </button>
-      <button className="filter-list" onClick={() => filterComplete(allLists)}>
+      <button
+        className={`filter-list ${complete}`}
+        onClick={() => filterComplete(allLists)}
+      >
         Completed
       </button>
     </div>

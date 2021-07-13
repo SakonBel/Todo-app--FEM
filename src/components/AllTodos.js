@@ -3,6 +3,11 @@ import Filter from "./Filter";
 const AllTodos = ({
   allLists,
   todos,
+  count,
+  all,
+  active,
+  complete,
+  theme,
   toggleActive,
   deleteTodo,
   filterActive,
@@ -11,7 +16,7 @@ const AllTodos = ({
 }) => {
   return (
     <main>
-      <div className="lists">
+      <div className={`lists ${theme}`}>
         <ul className="todo-lists">
           {todos.map((todo) => {
             if (todo.active) {
@@ -79,11 +84,15 @@ const AllTodos = ({
           })}
         </ul>
         <div className="list-status">
-          <p className="list-count">5 items left</p>
+          <p className="list-count">{count} items left</p>
           <button className="clear">Clear Completed</button>
         </div>
       </div>
       <Filter
+        all={all}
+        active={active}
+        complete={complete}
+        theme={theme}
         allLists={allLists}
         filterActive={filterActive}
         filterAll={filterAll}
