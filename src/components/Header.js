@@ -1,4 +1,8 @@
+import { useState } from "react";
+
 const Header = ({ addTodo }) => {
+  const [text, setText] = useState("");
+
   return (
     <header>
       <div className="container">
@@ -14,16 +18,36 @@ const Header = ({ addTodo }) => {
         </button>
       </div>
       <div className="create-task">
-        {/* <form
+        <form
           onSubmit={(e) => {
-            e.preventDefault();
-            console.log(e.target);
-            addTodo(e.value);
+            if (text !== "") {
+              e.preventDefault();
+              addTodo(text);
+              setText("");
+            } else {
+              e.preventDefault();
+            }
           }}
-        > */}
-        <div className="circle"></div>
-        <input type="text" placeholder="Create a new todo..." name="new-task" />
-        {/* </form> */}
+        >
+          <div
+            className="circle"
+            onClick={(e) => {
+              if (text !== "") {
+                e.preventDefault();
+                addTodo(text);
+                setText("");
+              } else {
+                e.preventDefault();
+              }
+            }}
+          ></div>
+          <input
+            type="text"
+            placeholder="Create a new todo..."
+            value={text}
+            onChange={(e) => setText(e.target.value)}
+          />
+        </form>
       </div>
     </header>
   );

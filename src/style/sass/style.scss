@@ -52,13 +52,17 @@ h1 {
   height: 48px;
   border-radius: 5px;
 
-  input {
-    color: $light-grayish-blue;
-    background-color: transparent;
-    border: none;
+  form {
+    display: flex;
 
-    &:focus {
-      height: 30px;
+    input {
+      color: $light-grayish-blue;
+      background-color: transparent;
+      border: none;
+
+      &:focus {
+        height: 30px;
+      }
     }
   }
 }

@@ -58,9 +58,11 @@ function App() {
       active: true,
     };
 
-    allLists.push(newList);
-    setTodos(allLists);
-    setAllLists(allLists);
+    const newAll = allLists.map((list) => list);
+    newAll.push(newList);
+
+    setTodos(newAll);
+    setAllLists(newAll);
   };
 
   const deleteTodo = (id) => {
@@ -85,7 +87,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header addTodo={addTodo} />
+      <Header addTodo={addTodo} todos={todos} allLists={allLists} />
       <AllTodos
         allLists={allLists}
         todos={todos}
