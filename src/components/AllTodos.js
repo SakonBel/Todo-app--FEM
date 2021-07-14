@@ -9,6 +9,7 @@ const AllTodos = ({
   complete,
   theme,
   toggleActive,
+  toggleModal,
   deleteTodo,
   filterActive,
   filterAll,
@@ -85,7 +86,9 @@ const AllTodos = ({
         </ul>
         <div className="list-status">
           <p className="list-count">{count} items left</p>
-          <button className="clear">Clear Completed</button>
+          <button className="clear" onClick={toggleModal}>
+            Clear Completed
+          </button>
         </div>
       </div>
       <Filter

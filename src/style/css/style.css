@@ -117,6 +117,7 @@ h1 {
   border-radius: 25px;
   margin-left: 20px;
   margin-right: 10px;
+  cursor: pointer;
 }
 
 main {
@@ -299,6 +300,64 @@ main {
 .filter[class~="light"] .active,
 .filter[class~="light"] .complete {
   color: #3a7bfd;
+}
+
+.modal {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgba(22, 23, 34, 0.8);
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+}
+
+.modal .box {
+  background-color: #25273c;
+  padding: 20px 0;
+}
+
+.modal .box p {
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+.modal .box .button-box {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.modal .box .cancel,
+.modal .box .confirm {
+  font-size: 1rem;
+  padding: 10px 0;
+  width: 50%;
+  border: none;
+  color: #cacde8;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.modal .box .cancel {
+  background-color: red;
+  border-radius: 5px 0 0 5px;
+}
+
+.modal .box .confirm {
+  background-color: green;
+  border-radius: 0 5px 5px 0;
+}
+
+.modal[class~="hidden"] {
+  visibility: hidden;
 }
 
 footer {

@@ -1,6 +1,7 @@
 import AllTodos from "./components/AllTodos";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Modal from "./components/Modal";
 import { useState } from "react";
 
 function App() {
@@ -45,6 +46,7 @@ function App() {
   const [active, setActive] = useState("");
   const [complete, setComplete] = useState("");
   const [theme, setTheme] = useState("dark");
+  const [visible, setVisible] = useState("hidden");
 
   body.className = theme;
 
@@ -73,6 +75,14 @@ function App() {
     countTodo(newLists);
   };
 
+  const toggleModal = () => {
+    if (visible === "hidden") {
+      setVisible("visible");
+    } else {
+      setVisible("hidden");
+    }
+  };
+
   const countTodo = (lists) => {
     const newCount = lists.filter((list) => list.active === true);
     setCount(newCount.length);
@@ -99,6 +109,13 @@ function App() {
     setTodos(newTodos);
     setAllLists(newLists);
     countTodo(newLists);
+  };
+
+  const deleteCompleted = () => {
+    const newList = allLists.filter((list) => list.active !== false);
+    const newTodos = todos.filter((todo) => todo.active !== false);
+    setAllLists(newList);
+    setTodos(newTodos);
   };
 
   const filterAll = (memo) => {
@@ -136,10 +153,16 @@ function App() {
         complete={complete}
         theme={theme}
         toggleActive={toggleActive}
+        toggleModal={toggleModal}
         deleteTodo={deleteTodo}
         filterAll={filterAll}
         filterActive={filterActive}
         filterComplete={filterComplete}
+      />
+      <Modal
+        visible={visible}
+        toggleModal={toggleModal}
+        deleteCompleted={deleteCompleted}
       />
       <Footer />
     </div>
