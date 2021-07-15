@@ -199,11 +199,24 @@ main {
 
 .lists[class~="dark"] .todo-item {
   color: #cacde8;
+  background-color: #25273c;
   border-color: #4d5066;
 }
 
 .lists[class~="dark"] .todo-item .cross {
   fill: #494c6b;
+}
+
+.lists[class~="dark"] .todo-item[class~="dragged"] {
+  background-color: #161722;
+}
+
+.lists[class~="dark"] .todo-item[class~="dragged"] .item {
+  color: #25273c;
+}
+
+.lists[class~="dark"] .todo-item[class~="dragged"] .cross {
+  opacity: 0.2;
 }
 
 .lists[class~="dark"] .complete .item {

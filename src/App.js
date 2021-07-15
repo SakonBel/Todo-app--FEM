@@ -47,6 +47,7 @@ function App() {
   const [complete, setComplete] = useState("");
   const [theme, setTheme] = useState("dark");
   const [visible, setVisible] = useState("hidden");
+  const [position, setPosition] = useState(null);
 
   body.className = theme;
 
@@ -70,7 +71,10 @@ function App() {
       }
       return list;
     });
-    setTodos(newLists);
+
+    const newTodos = todos.map((todo) => todo);
+
+    setTodos(newTodos);
     setAllLists(newLists);
     countTodo(newLists);
   };
@@ -141,6 +145,29 @@ function App() {
     setAll("");
   };
 
+  const dragStart = (e) => {
+    setTimeout(() => {
+      e.target.classList.add("dragged");
+    }, 0);
+
+    setPosition(e.target.offsetTop);
+  };
+
+  const dragEnd = (e) => {
+    setTimeout(() => {
+      e.target.classList.remove("dragged");
+    }, 0);
+  };
+
+  // const dragDrop = (e) => {
+  //   e.preventDefault();
+  //   // console.log(e.target);
+  //   const ul = document.querySelector("ul");
+  //   const dragged = document.querySelector(".dragged");
+  //   ul.append(dragged);
+  //   console.log(ul);
+  // };
+
   return (
     <div className="App">
       <Header addTodo={addTodo} theme={theme} changeTheme={changeTheme} />
@@ -158,6 +185,11 @@ function App() {
         filterAll={filterAll}
         filterActive={filterActive}
         filterComplete={filterComplete}
+        dragStart={dragStart}
+        dragEnd={dragEnd}
+        // dragDrop={dragDrop}
+        position={position}
+        setPosition={setPosition}
       />
       <Modal
         visible={visible}

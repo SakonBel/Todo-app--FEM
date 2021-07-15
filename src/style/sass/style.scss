@@ -174,10 +174,23 @@ main {
 
   .todo-item {
     color: $light-grayish-blue;
+    background-color: $very-dark-desaturate-blue;
     border-color: $very-dark-grayish-blue;
 
     .cross {
       fill: #494c6b;
+    }
+  }
+
+  .todo-item[class~="dragged"] {
+    background-color: $very-dark-blue;
+
+    .item {
+      color: $very-dark-desaturate-blue;
+    }
+
+    .cross {
+      opacity: 0.2;
     }
   }
 
@@ -203,6 +216,7 @@ main {
 
   .todo-item {
     color: $very-dark-grayish-blue;
+    // background-color: $very-light-gray;
     border-color: $light-grayish-blue;
 
     .cross {
