@@ -121,6 +121,7 @@ function App() {
     setTodos(newTodos);
     setAllLists(newLists);
     countTodo(newLists);
+    storeTempTodos(newLists);
   };
 
   const deleteCompleted = () => {
@@ -128,6 +129,7 @@ function App() {
     const newTodos = todos.filter((todo) => todo.active !== false);
     setAllLists(newList);
     setTodos(newTodos);
+    storeTempTodos(newList);
   };
 
   const filterAll = (memo) => {
@@ -168,7 +170,7 @@ function App() {
     setAll("");
   };
 
-  const storeTempTodos = () => {
+  const storeTempTodos = (todos) => {
     const allList = document.querySelectorAll("li");
 
     const newLists = [];
@@ -196,7 +198,7 @@ function App() {
   const dragEnd = (e) => {
     setTimeout(() => {
       e.target.classList.remove("dragged");
-      storeTempTodos();
+      storeTempTodos(todos);
     }, 0);
   };
 
