@@ -1,0 +1,239 @@
+// Tablet
+
+@media (min-width: 600px) {
+  .header {
+    padding: 67px 0;
+
+    input {
+      font-size: 16px;
+    }
+
+    .container {
+      margin: 0 auto;
+      padding-bottom: 27px;
+    }
+
+    .create-task {
+      margin: 0 auto;
+      height: 57px;
+
+      .circle {
+        width: 22px;
+        height: 22px;
+        margin-right: 17px;
+      }
+    }
+
+    h1 {
+      font-size: 2rem;
+      letter-spacing: 11px;
+    }
+
+    .change-theme {
+      transform: scale(0.65);
+    }
+  }
+
+  .main {
+    margin: 0 auto;
+    bottom: 47px;
+
+    .circle {
+      color: $very-dark-grayish-blue;
+      width: 22px;
+      height: 22px;
+      margin-left: 10px;
+      margin-right: 17px;
+    }
+
+    .lists {
+      .todo-item {
+        font-size: 16px;
+        padding: 17px 10px;
+
+        .cross {
+          transform: scale(0.65);
+          margin-right: 5px;
+        }
+      }
+
+      .list-count[class~="zero"] {
+        font-size: 16px;
+      }
+    }
+
+    .filter {
+      position: static;
+      max-width: 550px;
+      bottom: 0;
+      left: 0;
+    }
+  }
+}
+
+// Laptop
+
+@media (min-width: 850px) {
+  .header {
+    padding: 70px 0;
+
+    input {
+      font-size: 16px;
+    }
+
+    .container {
+      margin: 0 auto;
+      padding-bottom: 30px;
+    }
+
+    .create-task {
+      margin: 0 auto;
+      height: 60px;
+
+      .circle {
+        width: 22px;
+        height: 22px;
+        margin-right: 20px;
+      }
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      letter-spacing: 12px;
+    }
+
+    .change-theme {
+      transform: scale(0.75);
+    }
+  }
+
+  header[class~="dark"] {
+    background-image: url("../../images/bg-desktop-dark.jpg");
+  }
+
+  header[class~="light"] {
+    background-image: url("../../images/bg-desktop-light.jpg");
+  }
+
+  .main {
+    margin: 0 auto;
+    bottom: 50px;
+
+    .circle {
+      color: $very-dark-grayish-blue;
+      width: 22px;
+      height: 22px;
+      margin-left: 10px;
+      margin-right: 20px;
+    }
+
+    .lists {
+      .todo-item {
+        font-size: 16px;
+        padding: 20px 10px;
+
+        .cross {
+          transform: scale(0.75);
+          margin-right: 10px;
+        }
+      }
+
+      .list-count[class~="zero"] {
+        font-size: 16px;
+      }
+    }
+
+    .filter {
+      position: static;
+      max-width: 550px;
+      bottom: 0;
+      left: 0;
+    }
+  }
+}
+
+// Desktop
+
+@media (min-width: 1440px) {
+  .header {
+    padding: 75px 0;
+
+    input {
+      font-size: 18px;
+    }
+
+    .container {
+      margin: 0 auto;
+      padding-bottom: 35px;
+    }
+
+    .create-task {
+      margin: 0 auto;
+      height: 65px;
+
+      .circle {
+        width: 25px;
+        height: 25px;
+        margin-right: 20px;
+      }
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      letter-spacing: 15px;
+    }
+
+    .change-theme {
+      transform: scale(1);
+    }
+  }
+
+  header[class~="dark"] {
+    background-image: url("../../images/bg-desktop-dark.jpg");
+  }
+
+  header[class~="light"] {
+    background-image: url("../../images/bg-desktop-light.jpg");
+  }
+
+  .main {
+    margin: 0 auto;
+    bottom: 60px;
+
+    .circle {
+      color: $very-dark-grayish-blue;
+      width: 25px;
+      height: 25px;
+      margin-left: 10px;
+      margin-right: 20px;
+    }
+
+    .lists {
+      .todo-item {
+        font-size: 18px;
+        padding: 20px 10px;
+
+        .cross {
+          transform: scale(1);
+          margin-right: 10px;
+        }
+      }
+
+      .list-count[class~="zero"] {
+        font-size: 18px;
+      }
+    }
+
+    .filter {
+      background-color: transparent;
+      position: absolute;
+      width: 275px;
+      bottom: 0;
+      left: 25%;
+    }
+
+    .filter[class~="zero"] {
+      display: none;
+    }
+  }
+}

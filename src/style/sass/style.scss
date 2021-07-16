@@ -1,6 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
 
 @import "variables";
+@import "theme";
+@import "viewport";
 
 * {
   box-sizing: border-box;
@@ -29,15 +31,8 @@ header {
   padding: 40px 25px;
 }
 
-header[class~="dark"] {
-  background-image: url("../../images/bg-mobile-dark.jpg");
-}
-
-header[class~="light"] {
-  background-image: url("../../images/bg-mobile-light.jpg");
-}
-
 .container {
+  max-width: 550px;
   display: flex;
   justify-content: space-between;
   padding-bottom: 40px;
@@ -58,6 +53,7 @@ h1 {
 }
 
 .create-task {
+  max-width: 550px;
   display: flex;
   align-items: center;
   height: 48px;
@@ -65,39 +61,19 @@ h1 {
 
   form {
     display: flex;
+    width: 100%;
+    align-items: center;
 
     input {
+      font-family: $main-font;
       background-color: transparent;
       border: none;
+      width: 80%;
 
       &:focus {
         height: 20px;
       }
     }
-  }
-}
-
-.create-task[class~="dark"] {
-  background-color: $very-dark-desaturate-blue;
-
-  .circle {
-    border-color: $very-dark-grayish-blue;
-  }
-
-  input {
-    color: $light-grayish-blue;
-  }
-}
-
-.create-task[class~="light"] {
-  background-color: $very-light-gray;
-
-  .circle {
-    border-color: $light-grayish-blue;
-  }
-
-  input {
-    color: $dark-grayish-blue;
   }
 }
 
@@ -112,6 +88,7 @@ h1 {
 }
 
 main {
+  max-width: 550px;
   position: relative;
   bottom: 25px;
   margin: 0 25px;
@@ -154,12 +131,14 @@ main {
     justify-content: space-between;
     align-items: center;
     padding: 17px 20px;
+    border-radius: 0 0 5px 5px;
 
     .list-count[class~="zero"] {
       margin: 0 auto;
     }
 
     button {
+      font-family: $main-font;
       border: none;
       background: transparent;
       cursor: pointer;
@@ -172,86 +151,7 @@ main {
   }
 }
 
-.lists[class~="dark"] {
-  .todo-item {
-    color: $light-grayish-blue;
-    background-color: $very-dark-desaturate-blue;
-    border-color: $very-dark-grayish-blue;
-
-    .cross {
-      fill: #494c6b;
-    }
-  }
-
-  .todo-item[class~="dragged"] {
-    background-color: $very-dark-blue;
-
-    .item {
-      visibility: hidden;
-    }
-
-    .cross {
-      visibility: hidden;
-    }
-  }
-
-  .complete .item {
-    color: $very-dark-grayish-blue;
-  }
-
-  .list-status {
-    background-color: $very-dark-desaturate-blue;
-    color: $very-dark-grayish-blue;
-
-    button {
-      color: $very-dark-grayish-blue;
-    }
-  }
-}
-
-.lists[class~="light"] {
-  .circle {
-    border-color: $dark-grayish-blue;
-  }
-
-  .todo-item {
-    background-color: $very-light-gray;
-    color: $very-dark-grayish-blue;
-    border-color: $light-grayish-blue;
-
-    .cross {
-      fill: #494c6b;
-    }
-  }
-
-  .todo-item[class~="dragged"] {
-    background-color: $very-light-grayish-blue;
-
-    .item {
-      visibility: hidden;
-    }
-
-    .cross {
-      visibility: hidden;
-    }
-  }
-
-  .complete .item {
-    color: $light-grayish-blue;
-  }
-
-  .list-status {
-    background-color: $very-light-gray;
-    color: $very-dark-grayish-blue;
-
-    button {
-      color: $very-dark-grayish-blue;
-    }
-  }
-}
-
 .filter {
-  font-weight: $bold;
   margin-top: 20px;
   height: 50px;
   border-radius: 5px;
@@ -260,6 +160,7 @@ main {
   align-items: center;
 
   .filter-list {
+    font-weight: $bold;
     background: transparent;
     border: none;
     padding: 0 8px;
@@ -272,48 +173,21 @@ main {
   }
 }
 
-.filter[class~="dark"] {
-  background-color: $very-dark-desaturate-blue;
-
-  .filter-list {
-    color: $very-dark-grayish-blue;
-  }
-
-  .all,
-  .active,
-  .complete {
-    color: $bright-blue;
-  }
-}
-
-.filter[class~="light"] {
-  background-color: $very-light-gray;
-
-  .filter-list {
-    color: $very-dark-grayish-blue;
-  }
-
-  .all,
-  .active,
-  .complete {
-    color: $bright-blue;
-  }
-}
-
 .modal {
   position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: rgba($color: $very-dark-blue, $alpha: 0.8);
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   top: 0;
   left: 0;
 
   .box {
     padding: 20px 0;
     width: 90%;
+    max-width: 600px;
     border-radius: 5px;
 
     p {
@@ -360,19 +234,6 @@ main {
 
 .modal[class~="hidden"] {
   visibility: hidden;
-}
-
-.modal[class~="light"] {
-  .box {
-    background-color: $very-light-grayish-blue;
-    color: $dark-grayish-blue;
-  }
-}
-
-.modal[class~="dark"] {
-  .box {
-    background-color: $very-dark-desaturate-blue;
-  }
 }
 
 footer {

@@ -4,7 +4,7 @@ const Header = ({ addTodo, theme, changeTheme }) => {
   const [text, setText] = useState("");
 
   return (
-    <header className={theme}>
+    <header className={`header ${theme}`}>
       <div className="container">
         <h1 className="title">todo</h1>
         <button className="change-theme" onClick={changeTheme}>

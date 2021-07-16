@@ -2,6 +2,7 @@ const Filter = ({
   all,
   active,
   complete,
+  count,
   theme,
   allLists,
   filterActive,
@@ -9,7 +10,7 @@ const Filter = ({
   filterComplete,
 }) => {
   return (
-    <div className={`filter ${theme}`}>
+    <div className={`filter ${theme} ${count ? "" : "zero"}`}>
       <button
         className={`filter-list ${all}`}
         onClick={() => filterAll(allLists)}

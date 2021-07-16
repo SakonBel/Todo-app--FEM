@@ -20,7 +20,7 @@ const AllTodos = ({
   dragOver,
 }) => {
   return (
-    <main>
+    <main className="main">
       <div className={`lists ${theme}`}>
         <ul className="todo-lists" onDragOverCapture={(e) => dragOver(e)}>
           {todos.map((todo) => {
@@ -127,6 +127,7 @@ const AllTodos = ({
         all={all}
         active={active}
         complete={complete}
+        count={count}
         theme={theme}
         allLists={allLists}
         filterActive={filterActive}

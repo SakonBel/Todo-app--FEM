@@ -1,0 +1,158 @@
+// Header
+header[class~="dark"] {
+  background-image: url("../../images/bg-mobile-dark.jpg");
+}
+
+header[class~="light"] {
+  background-image: url("../../images/bg-mobile-light.jpg");
+}
+
+// Main
+// Creage tasks
+.create-task[class~="dark"] {
+  background-color: $very-dark-desaturate-blue;
+
+  .circle {
+    border-color: $very-dark-grayish-blue;
+  }
+
+  input {
+    color: $light-grayish-blue;
+  }
+}
+
+.create-task[class~="light"] {
+  background-color: $very-light-gray;
+
+  .circle {
+    border-color: $light-grayish-blue;
+  }
+
+  input {
+    color: $dark-grayish-blue;
+  }
+}
+
+// list
+.lists[class~="dark"] {
+  background-color: $very-dark-desaturate-blue;
+
+  .todo-item {
+    color: $light-grayish-blue;
+    border-color: $very-dark-grayish-blue;
+
+    .cross {
+      fill: #494c6b;
+    }
+  }
+
+  .todo-item[class~="dragged"] {
+    background-color: $very-dark-blue;
+
+    .item {
+      visibility: hidden;
+    }
+
+    .cross {
+      visibility: hidden;
+    }
+  }
+
+  .complete .item {
+    color: $very-dark-grayish-blue;
+  }
+
+  .list-status {
+    background-color: $very-dark-desaturate-blue;
+    color: $very-dark-grayish-blue;
+
+    button {
+      color: $very-dark-grayish-blue;
+    }
+  }
+}
+
+.lists[class~="light"] {
+  background-color: $very-light-gray;
+
+  .circle {
+    border-color: $dark-grayish-blue;
+  }
+
+  .todo-item {
+    color: $very-dark-grayish-blue;
+    border-color: $light-grayish-blue;
+
+    .cross {
+      fill: #494c6b;
+    }
+  }
+
+  .todo-item[class~="dragged"] {
+    background-color: $very-light-grayish-blue;
+
+    .item {
+      visibility: hidden;
+    }
+
+    .cross {
+      visibility: hidden;
+    }
+  }
+
+  .complete .item {
+    color: $light-grayish-blue;
+  }
+
+  .list-status {
+    background-color: $very-light-gray;
+    color: $very-dark-grayish-blue;
+
+    button {
+      color: $very-dark-grayish-blue;
+    }
+  }
+}
+
+// Filter
+.filter[class~="dark"] {
+  background-color: $very-dark-desaturate-blue;
+
+  .filter-list {
+    color: $very-dark-grayish-blue;
+  }
+
+  .all,
+  .active,
+  .complete {
+    color: $bright-blue;
+  }
+}
+
+.filter[class~="light"] {
+  background-color: $very-light-gray;
+
+  .filter-list {
+    color: $very-dark-grayish-blue;
+  }
+
+  .all,
+  .active,
+  .complete {
+    color: $bright-blue;
+  }
+}
+
+// Modal
+.modal[class~="light"] {
+  .box {
+    background-color: $very-light-grayish-blue;
+    color: $dark-grayish-blue;
+  }
+}
+
+.modal[class~="dark"] {
+  .box {
+    background-color: $very-dark-desaturate-blue;
+  }
+}
