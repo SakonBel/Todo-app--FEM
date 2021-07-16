@@ -48,6 +48,9 @@ function App() {
   const [theme, setTheme] = useState("dark");
   const [visible, setVisible] = useState("hidden");
   const [position, setPosition] = useState(null);
+  const [tempActiveTodos, setTempActiveTodos] = useState(null);
+  const [tempCompletedTodos, setTempCompletedTodos] = useState(null);
+  const [tempAllTodos, setTempAllTodos] = useState(null);
 
   body.className = theme;
 
@@ -123,26 +126,58 @@ function App() {
   };
 
   const filterAll = (memo) => {
-    setTodos(memo);
+    if (tempAllTodos) {
+      setTodos(tempAllTodos);
+      setAllLists(tempAllTodos);
+    } else {
+      setTodos(memo);
+    }
+
     setAll("all");
     setActive("");
     setComplete("");
   };
 
   const filterActive = (memo) => {
-    const tasks = memo.filter((todo) => todo.active === true);
-    setTodos(tasks);
+    if (tempActiveTodos) {
+      setTodos(tempActiveTodos);
+    } else {
+      const tasks = memo.filter((todo) => todo.active === true);
+      setTodos(tasks);
+    }
+
     setActive("active");
     setAll("");
     setComplete("");
   };
 
   const filterComplete = (memo) => {
-    const tasks = memo.filter((todo) => todo.active === false);
-    setTodos(tasks);
+    if (tempCompletedTodos) {
+      setTodos(tempCompletedTodos);
+    } else {
+      const tasks = memo.filter((todo) => todo.active === false);
+      setTodos(tasks);
+    }
     setComplete("complete");
     setActive("");
     setAll("");
+  };
+
+  const storeTempTodos = () => {
+    const allList = document.querySelectorAll("li");
+
+    const newLists = [];
+    allList.forEach((list) => {
+      newLists.push(...todos.filter((todo) => todo.id === Number(list.id)));
+    });
+
+    if (active) {
+      setTempActiveTodos(newLists);
+    } else if (complete) {
+      setTempCompletedTodos(newLists);
+    } else {
+      setTempAllTodos(newLists);
+    }
   };
 
   const dragStart = (e) => {
@@ -156,17 +191,30 @@ function App() {
   const dragEnd = (e) => {
     setTimeout(() => {
       e.target.classList.remove("dragged");
+      storeTempTodos();
     }, 0);
   };
 
-  // const dragDrop = (e) => {
-  //   e.preventDefault();
-  //   // console.log(e.target);
-  //   const ul = document.querySelector("ul");
-  //   const dragged = document.querySelector(".dragged");
-  //   ul.append(dragged);
-  //   console.log(ul);
-  // };
+  const dragOver = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    const ul = document.querySelector("ul");
+    const dragged = document.querySelector(".dragged");
+
+    if (e.target.offsetTop <= 0 && position > 0) {
+      ul.prepend(dragged);
+      setPosition(0);
+    } else if (e.target.offsetTop > 0 && e.target.tagName === "LI") {
+      if (position > e.target.offsetTop) {
+        e.target.after(dragged);
+        setPosition(e.target.offsetTop - e.target.offsetHeight / 2);
+      } else if (position < e.target.offsetTop) {
+        e.target.before(dragged);
+        setPosition(e.target.offsetTop + e.target.offsetHeight / 2);
+      }
+    }
+  };
 
   return (
     <div className="App">
@@ -187,9 +235,7 @@ function App() {
         filterComplete={filterComplete}
         dragStart={dragStart}
         dragEnd={dragEnd}
-        // dragDrop={dragDrop}
-        position={position}
-        setPosition={setPosition}
+        dragOver={dragOver}
       />
       <Modal
         visible={visible}

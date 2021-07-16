@@ -16,47 +16,12 @@ const AllTodos = ({
   filterComplete,
   dragStart,
   dragEnd,
-  position,
-  setPosition,
+  dragOver,
 }) => {
   return (
     <main>
       <div className={`lists ${theme}`}>
-        <ul
-          className="todo-lists"
-          onDragOverCapture={(e) => {
-            e.preventDefault();
-            e.stopPropagation();
-
-            const ul = document.querySelector("ul");
-            const dragged = document.querySelector(".dragged");
-
-            if (e.target.offsetTop <= 0 && position > 0) {
-              ul.prepend(dragged);
-              setPosition(0);
-            } else if (e.target.offsetTop > 0 && e.target.tagName === "LI") {
-              if (position > e.target.offsetTop) {
-                e.target.after(dragged);
-                setPosition(e.target.offsetTop - e.target.offsetHeight / 2);
-              } else if (position < e.target.offsetTop) {
-                e.target.before(dragged);
-                setPosition(e.target.offsetTop + e.target.offsetHeight / 2);
-              }
-            }
-          }}
-          // onClick={() => {
-          //   const allList = document.querySelectorAll("li");
-
-          //   const newLists = [];
-          //   allList.forEach((list) => {
-          //     newLists.push(
-          //       ...todos.filter((todo) => todo.id === Number(list.id))
-          //     );
-          //   });
-
-          //   console.log(newLists);
-          // }}
-        >
+        <ul className="todo-lists" onDragOverCapture={(e) => dragOver(e)}>
           {todos.map((todo) => {
             if (todo.active) {
               return (
