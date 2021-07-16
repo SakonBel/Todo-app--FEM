@@ -51,6 +51,11 @@ function App() {
   const [tempActiveTodos, setTempActiveTodos] = useState(null);
   const [tempCompletedTodos, setTempCompletedTodos] = useState(null);
   const [tempAllTodos, setTempAllTodos] = useState(null);
+  const [check, setCheck] = useState(true);
+  const [count, setCount] = useState(() => {
+    const tempLists = lists.filter((list) => list.active === true);
+    return tempLists.length;
+  });
 
   body.className = theme;
 
@@ -61,11 +66,6 @@ function App() {
       setTheme("dark");
     }
   };
-
-  const [count, setCount] = useState(() => {
-    const tempLists = lists.filter((list) => list.active === true);
-    return tempLists.length;
-  });
 
   const toggleActive = (id) => {
     const newLists = allLists.map((list) => {
@@ -93,6 +93,11 @@ function App() {
   const countTodo = (lists) => {
     const newCount = lists.filter((list) => list.active === true);
     setCount(newCount.length);
+  };
+
+  const activeCheck = () => {
+    const result = allLists.some((list) => list.active === false);
+    setCheck(result);
   };
 
   const addTodo = (text) => {
@@ -227,6 +232,7 @@ function App() {
         active={active}
         complete={complete}
         theme={theme}
+        activeCheck={activeCheck}
         toggleActive={toggleActive}
         toggleModal={toggleModal}
         deleteTodo={deleteTodo}
@@ -238,6 +244,8 @@ function App() {
         dragOver={dragOver}
       />
       <Modal
+        check={check}
+        theme={theme}
         visible={visible}
         toggleModal={toggleModal}
         deleteCompleted={deleteCompleted}

@@ -8,6 +8,7 @@ const AllTodos = ({
   active,
   complete,
   theme,
+  activeCheck,
   toggleActive,
   toggleModal,
   deleteTodo,
@@ -101,12 +102,26 @@ const AllTodos = ({
             }
           })}
         </ul>
-        <div className="list-status">
-          <p className="list-count">{count} items left</p>
-          <button className="clear" onClick={toggleModal}>
-            Clear Completed
-          </button>
-        </div>
+        {count ? (
+          <div className="list-status">
+            <p className="list-count">{count} items left</p>
+            <button
+              className="clear"
+              onClick={() => {
+                activeCheck();
+                toggleModal();
+              }}
+            >
+              Clear Completed
+            </button>
+          </div>
+        ) : (
+          <div className="list-status">
+            <p className="list-count zero">
+              There is no todo left. Please add new todo!
+            </p>
+          </div>
+        )}
       </div>
       <Filter
         all={all}

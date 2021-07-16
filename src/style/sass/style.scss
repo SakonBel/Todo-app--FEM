@@ -119,7 +119,6 @@ main {
 
 .lists {
   border-radius: 5px;
-  background-color: $very-dark-desaturate-blue;
 
   .todo-item {
     display: flex;
@@ -156,6 +155,10 @@ main {
     align-items: center;
     padding: 17px 20px;
 
+    .list-count[class~="zero"] {
+      margin: 0 auto;
+    }
+
     button {
       border: none;
       background: transparent;
@@ -170,8 +173,6 @@ main {
 }
 
 .lists[class~="dark"] {
-  background-color: $very-dark-desaturate-blue;
-
   .todo-item {
     color: $light-grayish-blue;
     background-color: $very-dark-desaturate-blue;
@@ -186,11 +187,11 @@ main {
     background-color: $very-dark-blue;
 
     .item {
-      color: $very-dark-desaturate-blue;
+      visibility: hidden;
     }
 
     .cross {
-      opacity: 0.2;
+      visibility: hidden;
     }
   }
 
@@ -199,6 +200,7 @@ main {
   }
 
   .list-status {
+    background-color: $very-dark-desaturate-blue;
     color: $very-dark-grayish-blue;
 
     button {
@@ -208,19 +210,29 @@ main {
 }
 
 .lists[class~="light"] {
-  background-color: $very-light-gray;
-
   .circle {
     border-color: $dark-grayish-blue;
   }
 
   .todo-item {
+    background-color: $very-light-gray;
     color: $very-dark-grayish-blue;
-    // background-color: $very-light-gray;
     border-color: $light-grayish-blue;
 
     .cross {
       fill: #494c6b;
+    }
+  }
+
+  .todo-item[class~="dragged"] {
+    background-color: $very-light-grayish-blue;
+
+    .item {
+      visibility: hidden;
+    }
+
+    .cross {
+      visibility: hidden;
     }
   }
 
@@ -229,6 +241,7 @@ main {
   }
 
   .list-status {
+    background-color: $very-light-gray;
     color: $very-dark-grayish-blue;
 
     button {
@@ -299,12 +312,14 @@ main {
   left: 0;
 
   .box {
-    background-color: $very-dark-desaturate-blue;
     padding: 20px 0;
+    width: 90%;
+    border-radius: 5px;
 
     p {
       font-size: 1.25rem;
       text-align: center;
+      margin: 20px;
     }
 
     .button-box {
@@ -313,7 +328,8 @@ main {
     }
 
     .cancel,
-    .confirm {
+    .confirm,
+    .okay {
       font-size: 1rem;
       padding: 10px 0;
       width: 50%;
@@ -332,11 +348,31 @@ main {
       background-color: green;
       border-radius: 0 5px 5px 0;
     }
+
+    .okay {
+      background-color: red;
+      display: block;
+      border-radius: 5px;
+      margin: 0 auto;
+    }
   }
 }
 
 .modal[class~="hidden"] {
   visibility: hidden;
+}
+
+.modal[class~="light"] {
+  .box {
+    background-color: $very-light-grayish-blue;
+    color: $dark-grayish-blue;
+  }
+}
+
+.modal[class~="dark"] {
+  .box {
+    background-color: $very-dark-desaturate-blue;
+  }
 }
 
 footer {

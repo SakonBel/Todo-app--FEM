@@ -128,7 +128,6 @@ main {
 
 .lists {
   border-radius: 5px;
-  background-color: #25273c;
 }
 
 .lists .todo-item {
@@ -183,6 +182,10 @@ main {
   padding: 17px 20px;
 }
 
+.lists .list-status .list-count[class~="zero"] {
+  margin: 0 auto;
+}
+
 .lists .list-status button {
   border: none;
   background: transparent;
@@ -191,10 +194,6 @@ main {
 
 .lists .list-status button:hover, .lists .list-status button:active {
   color: #3a7bfd;
-}
-
-.lists[class~="dark"] {
-  background-color: #25273c;
 }
 
 .lists[class~="dark"] .todo-item {
@@ -212,11 +211,11 @@ main {
 }
 
 .lists[class~="dark"] .todo-item[class~="dragged"] .item {
-  color: #25273c;
+  visibility: hidden;
 }
 
 .lists[class~="dark"] .todo-item[class~="dragged"] .cross {
-  opacity: 0.2;
+  visibility: hidden;
 }
 
 .lists[class~="dark"] .complete .item {
@@ -224,6 +223,7 @@ main {
 }
 
 .lists[class~="dark"] .list-status {
+  background-color: #25273c;
   color: #4d5066;
 }
 
@@ -231,15 +231,12 @@ main {
   color: #4d5066;
 }
 
-.lists[class~="light"] {
-  background-color: #fafafa;
-}
-
 .lists[class~="light"] .circle {
   border-color: #777a92;
 }
 
 .lists[class~="light"] .todo-item {
+  background-color: #fafafa;
   color: #4d5066;
   border-color: #cacde8;
 }
@@ -248,11 +245,24 @@ main {
   fill: #494c6b;
 }
 
+.lists[class~="light"] .todo-item[class~="dragged"] {
+  background-color: #e4e5f1;
+}
+
+.lists[class~="light"] .todo-item[class~="dragged"] .item {
+  visibility: hidden;
+}
+
+.lists[class~="light"] .todo-item[class~="dragged"] .cross {
+  visibility: hidden;
+}
+
 .lists[class~="light"] .complete .item {
   color: #cacde8;
 }
 
 .lists[class~="light"] .list-status {
+  background-color: #fafafa;
   color: #4d5066;
 }
 
@@ -334,13 +344,15 @@ main {
 }
 
 .modal .box {
-  background-color: #25273c;
   padding: 20px 0;
+  width: 90%;
+  border-radius: 5px;
 }
 
 .modal .box p {
   font-size: 1.25rem;
   text-align: center;
+  margin: 20px;
 }
 
 .modal .box .button-box {
@@ -349,7 +361,8 @@ main {
 }
 
 .modal .box .cancel,
-.modal .box .confirm {
+.modal .box .confirm,
+.modal .box .okay {
   font-size: 1rem;
   padding: 10px 0;
   width: 50%;
@@ -369,8 +382,24 @@ main {
   border-radius: 0 5px 5px 0;
 }
 
+.modal .box .okay {
+  background-color: red;
+  display: block;
+  border-radius: 5px;
+  margin: 0 auto;
+}
+
 .modal[class~="hidden"] {
   visibility: hidden;
+}
+
+.modal[class~="light"] .box {
+  background-color: #e4e5f1;
+  color: #777a92;
+}
+
+.modal[class~="dark"] .box {
+  background-color: #25273c;
 }
 
 footer {
