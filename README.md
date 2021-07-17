@@ -26,8 +26,11 @@ Users should be able to:
 
 ### Screenshot
 
-![./Desktop-Sunnyside-Agency.png]
-![./Mobile-Sunnyside-Agency.png]
+![Screenshot 2021-07-17 at 08-31-28 Todos App](https://user-images.githubusercontent.com/63510603/126021474-4ff8e1dd-06a1-4264-88e1-c0fd3b121747.png)
+![Screenshot 2021-07-17 at 08-31-44 Todos App](https://user-images.githubusercontent.com/63510603/126021479-3720d3b6-b7e3-4cfa-8c63-211f4fcecb7f.png)
+![Screenshot 2021-07-17 at 08-31-12 Todos App](https://user-images.githubusercontent.com/63510603/126021480-89e8236c-e927-433d-9202-eb43f3af4de6.png)
+![Screenshot 2021-07-17 at 08-30-43 Todos App](https://user-images.githubusercontent.com/63510603/126021483-b32e970c-b032-4de3-9a55-627138e53a78.png)
+
 
 ### Links
 
