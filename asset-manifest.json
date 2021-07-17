@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/Todo-app--FEM/static/css/main.b02a5b1c.chunk.css",
+    "main.js": "/Todo-app--FEM/static/js/main.45182e0e.chunk.js",
+    "main.js.map": "/Todo-app--FEM/static/js/main.45182e0e.chunk.js.map",
+    "runtime-main.js": "/Todo-app--FEM/static/js/runtime-main.847f00be.js",
+    "runtime-main.js.map": "/Todo-app--FEM/static/js/runtime-main.847f00be.js.map",
+    "static/js/2.072030cc.chunk.js": "/Todo-app--FEM/static/js/2.072030cc.chunk.js",
+    "static/js/2.072030cc.chunk.js.map": "/Todo-app--FEM/static/js/2.072030cc.chunk.js.map",
+    "index.html": "/Todo-app--FEM/index.html",
+    "static/css/main.b02a5b1c.chunk.css.map": "/Todo-app--FEM/static/css/main.b02a5b1c.chunk.css.map",
+    "static/js/2.072030cc.chunk.js.LICENSE.txt": "/Todo-app--FEM/static/js/2.072030cc.chunk.js.LICENSE.txt",
+    "static/media/style.css": "/Todo-app--FEM/static/media/bg-desktop-light.3508d620.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.847f00be.js",
+    "static/js/2.072030cc.chunk.js",
+    "static/css/main.b02a5b1c.chunk.css",
+    "static/js/main.45182e0e.chunk.js"
+  ]
+}
