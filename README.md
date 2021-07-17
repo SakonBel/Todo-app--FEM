@@ -1,70 +1,92 @@
-# Getting Started with Create React App
+# Frontend Mentor - Todo app solution
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a solution to the [Todo app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-## Available Scripts
+## Table of contents
 
-In the project directory, you can run:
+- [Overview]
+  - [The challenge]
+  - [Screenshot]
+  - [Links]
+- [My process]
+  - [Built with]
+  - [What I learned]
+  - [Continued development]
+  - [Useful resources]
+- [Author]
 
-### `npm start`
+## Overview
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### The challenge
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Users should be able to:
 
-### `npm test`
+- View the optimal layout for the site depending on their device's screen size
+- See hover states for all interactive elements on the page
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Screenshot
 
-### `npm run build`
+![./Desktop-Sunnyside-Agency.png]
+![./Mobile-Sunnyside-Agency.png]
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Links
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Solution URL: [https://github.com/SakonBel/Todo-app--FEM]
+- Live Site URL: [https://sakonbel.github.io/Todo-app--FEM/]
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## My process
 
-### `npm run eject`
+### Built with
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+- SASS
+- JavaScript
+- React
+- Mobile-first workflow
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### What I learned
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+#### SASS
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+This project is a good oppotunity for me to practice SASS in the real project, and I must say that I love the way SASS work. I learn a lot including how to structure all selector using SASS and keep it in a more modularity, how to nest a selector to avoid too much complicate naming and clashed of tag used, also how to create a theme. This make me want to use SASS much more in my future project to come.
 
-## Learn More
+#### CSS
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+With pure CSS, I have learn to use selector to manipulate the class name and change the way the styling work with some behavior. This give me a new idea for me and I will be using this knowledge for other project as well.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### JavaScript
 
-### Code Splitting
+I have use a lot of JavaScript in this project since it is React-base. This give me the chances
+to use many array method including map, some, filter, foreach, spread and much more. I think my knowledge is significantly improve in this project!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+#### React
 
-### Analyzing the Bundle Size
+Last but not least, React. This library sure give me a lot of headache, and the same time a lot of discovering. I manage to use many state and fine-tune my app until I reach the point that I am satisfying with the outcome. I can proudly say that this app boost my knowledge about React and make me thirst to learn and explore about it more in the future!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Continued development
 
-### Making a Progressive Web App
+This app make me proud. I've never thought that I can build this kind of app in the past, let alone make it so good like this before. But as I develop and finished this app I've soon realize that I have to learn more. The area that I want to learn more after this is...
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- React state
+- CSS grid
+- JavaScript object
+- React lifecycle
 
-### Advanced Configuration
+### Useful resources
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- [Traversy Media youtube channel](https://www.youtube.com/channel/UC29ju8bIPH5as8OGnQzwJyA) - This guy have always been my go to channel for every topic that I want to learn. His clear explaination and project-base video is always help me understand complex topic every time. Many respect to him.
 
-### Deployment
+- [The Net Ninja youtube channel](https://www.youtube.com/channel/UCW5YeuERMmlnqo4oq8vwUpg) - This is also valuable youtube channel that I visit to learn every topic. I heavily use this site while building this project to learn about React and try to understand and implement my own logic using the knowledge from this site. Many thanks to him as well.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- [Web Dev Simplify youtube channel](https://www.youtube.com/channel/UCFbNIlppjAuEX4znoulh0Cw) This site give me a high level understanding of the topic. I didn't go to this site much but I can say after building this app that this site is pack with many valuable content. I plan to use this site more in the future.
 
-### `npm run build` fails to minify
+- [Stack overflow](https://stackoverflow.com) - This is helping me to find solution for many of my problems. Really a lifesaver site.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Author
+
+Made by Sakon Plangklang
+
+- Frontend Mentor - [@SakonSabel](https://www.frontendmentor.io/profile/SakonSabel)
+- Twitter - [@WhitePhantoms](https://twitter.com/WhitePhantoms)
