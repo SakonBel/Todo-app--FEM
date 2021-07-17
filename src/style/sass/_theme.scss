@@ -39,6 +39,8 @@ header[class~="light"] {
 
   .todo-item {
     color: $light-grayish-blue;
+    border-radius: 5px 5px 0 0;
+    background-color: $very-dark-desaturate-blue;
     border-color: $very-dark-grayish-blue;
 
     .cross {
@@ -81,6 +83,8 @@ header[class~="light"] {
 
   .todo-item {
     color: $very-dark-grayish-blue;
+    border-radius: 5px 5px 0 0;
+    background-color: $very-light-gray;
     border-color: $light-grayish-blue;
 
     .cross {

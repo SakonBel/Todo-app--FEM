@@ -37,6 +37,8 @@ header[class~="light"] {
 
 .lists[class~="dark"] .todo-item {
   color: #cacde8;
+  border-radius: 5px 5px 0 0;
+  background-color: #25273c;
   border-color: #4d5066;
 }
 
@@ -79,6 +81,8 @@ header[class~="light"] {
 
 .lists[class~="light"] .todo-item {
   color: #4d5066;
+  border-radius: 5px 5px 0 0;
+  background-color: #fafafa;
   border-color: #cacde8;
 }
 

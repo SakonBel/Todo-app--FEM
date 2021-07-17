@@ -48,9 +48,6 @@ function App() {
   const [theme, setTheme] = useState("dark");
   const [visible, setVisible] = useState("hidden");
   const [position, setPosition] = useState(null);
-  const [tempActiveTodos, setTempActiveTodos] = useState(null);
-  const [tempCompletedTodos, setTempCompletedTodos] = useState(null);
-  const [tempAllTodos, setTempAllTodos] = useState(null);
   const [check, setCheck] = useState(true);
   const [count, setCount] = useState(() => {
     const tempLists = lists.filter((list) => list.active === true);
@@ -109,8 +106,10 @@ function App() {
 
     const newAll = allLists.map((list) => list);
     newAll.push(newList);
+    const newtodo = todos.map((list) => list);
+    newtodo.push(newList);
 
-    setTodos(newAll);
+    setTodos(newtodo);
     setAllLists(newAll);
     countTodo(newAll);
   };
@@ -121,7 +120,6 @@ function App() {
     setTodos(newTodos);
     setAllLists(newLists);
     countTodo(newLists);
-    storeTempTodos(newLists);
   };
 
   const deleteCompleted = () => {
@@ -129,48 +127,32 @@ function App() {
     const newTodos = todos.filter((todo) => todo.active !== false);
     setAllLists(newList);
     setTodos(newTodos);
-    storeTempTodos(newList);
   };
 
   const filterAll = (memo) => {
-    if (tempAllTodos) {
-      setTodos(tempAllTodos);
-      setAllLists(tempAllTodos);
-    } else {
-      setTodos(memo);
-    }
-
+    setTodos(allLists);
     setAll("all");
     setActive("");
     setComplete("");
   };
 
   const filterActive = (memo) => {
-    if (tempActiveTodos) {
-      setTodos(tempActiveTodos);
-    } else {
-      const tasks = memo.filter((todo) => todo.active === true);
-      setTodos(tasks);
-    }
-
+    const tasks = memo.filter((todo) => todo.active === true);
+    setTodos(tasks);
     setActive("active");
     setAll("");
     setComplete("");
   };
 
   const filterComplete = (memo) => {
-    if (tempCompletedTodos) {
-      setTodos(tempCompletedTodos);
-    } else {
-      const tasks = memo.filter((todo) => todo.active === false);
-      setTodos(tasks);
-    }
+    const tasks = memo.filter((todo) => todo.active === false);
+    setTodos(tasks);
     setComplete("complete");
     setActive("");
     setAll("");
   };
 
-  const storeTempTodos = (todos) => {
+  const storeTempTodos = () => {
     const allList = document.querySelectorAll("li");
 
     const newLists = [];
@@ -178,12 +160,9 @@ function App() {
       newLists.push(...todos.filter((todo) => todo.id === Number(list.id)));
     });
 
-    if (active) {
-      setTempActiveTodos(newLists);
-    } else if (complete) {
-      setTempCompletedTodos(newLists);
-    } else {
-      setTempAllTodos(newLists);
+    if (all) {
+      setAllLists(newLists);
+      setTodos(allLists);
     }
   };
 
@@ -198,7 +177,7 @@ function App() {
   const dragEnd = (e) => {
     setTimeout(() => {
       e.target.classList.remove("dragged");
-      storeTempTodos(todos);
+      storeTempTodos();
     }, 0);
   };
 
